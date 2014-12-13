@@ -37,7 +37,7 @@ func search(query string) error {
 		return err
 	}
 	for _, p := range s.Hits {
-		fmt.Printf("%s\n\n", p.Package)
+		fmt.Printf("http://godoc.org/\x1b[4m%s\x1b[24m\n\n", p.Package)
 		doc.ToText(os.Stdout, p.Synopsis, "  ", "", 74)
 		fmt.Printf("\n")
 	}
