@@ -123,7 +123,7 @@ func main() {
 			fmt.Println(err)
 		}
 	case "search":
-		query := flag.Arg(1)
+		query := flag.Args()[1:]
 		if err := search(query); err != nil {
 			fmt.Println(err)
 		}

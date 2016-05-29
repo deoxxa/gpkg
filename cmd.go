@@ -22,8 +22,8 @@ type Search struct {
 	Hits  []Package
 }
 
-func search(query string) error {
-	resp, err := http.Get(fmt.Sprintf(apiSearch, url.QueryEscape(query)))
+func search(query []string) error {
+	resp, err := http.Get(fmt.Sprintf(apiSearch, url.QueryEscape(strings.Join(query, " "))))
 	if err != nil {
 		return err
 	}
